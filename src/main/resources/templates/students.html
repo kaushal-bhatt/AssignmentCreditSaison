@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Saison Assignment</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Credit Saison Assignment</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+</nav>
+<div class="container">
+    <div class="row">
+        <H1>List Credit Card</H1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <a th:href="@{/}" class = "btn btn-primary btn-sm mb-2">Search Card</a>
+        </div>
+        <div class="col-lg-3">
+            <a th:href="@{/students/stats}" class = "btn btn-primary btn-sm mb-2">Statistics</a>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Credit Card Number</th>
+            <th>Count</th>
+            <th>First Time</th>
+            <th>Latest Time</th>
+        </tr>
+        </thead>
+        <tbody>
+       <tr th:each = "student: ${students}">
+       <td th:text ="${student.randomString}" ></td>
+
+
+       </tr>
+        </tbody>
+        <tbody>
+        <tr th:each = "statistics: ${stats}">
+
+            <td th:text="${statistics.randomString}">Card Number</td>
+
+            <td th:text="${statistics.count}">Count</td>
+
+            <td th:text="${statistics.firstTime}">First Time</td>
+
+            <td th:text="${statistics.latestTime}">Latest Time</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+
+</div>
+</body>
+</html>
